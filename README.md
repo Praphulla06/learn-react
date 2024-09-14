@@ -177,3 +177,44 @@ UserProfile.propTypes = {
   )
 }
 ```
+
+### *Children Components*
+
+- *UserName and UserProfile components are children component of App (parent) component*
+- *UserName and UserProfile components are sibiling components*
+
+### *Fragments*
+
+- *A React Fragment lets you return multiple elements from a component without adding extra nodes to the DOM.*
+
+```jsx
+import React from 'react'
+
+const User = (props) => {
+  return (
+    <React.Fragment>
+      Username: {props.name}
+      Age: {props.age}
+    </React.Fragment>
+  )
+}
+
+export default User
+
+```
+#### *OR*
+```jsx
+import React from 'react'
+
+const User = (props) => {
+  return (
+    <>
+      Username: {props.name}
+      Age: {props.age}
+    </>
+  )
+}
+
+export default User
+
+```
