@@ -1,35 +1,20 @@
-import React from "react";
-import UserProfile from "./components/UserProfile";
-import UserName from "./components/UserName";
+import React, { useState } from "react";
+
 const App = () => {
-  const greet = () => {
-    console.log("Hello, World");
-  };
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <div>
-      <h1>Hello, World</h1>
-      <UserName
-        name="Praphulla"
-        age={18}
-        email="praphullamall62@gmail.com"
-        Greet={greet}
-      />
-      <UserProfile
-        FavoriteFoods={[
-          {
-            name: "Pizza",
-            price: 650,
-          },
-          {
-            name: "Cheese Balls",
-            price: 450,
-          },
-          {
-            name: "Grilled Chicken",
-            price: 490,
-          },
-        ]}
-      />
+      {loggedIn ? (
+        <div>
+          <span>Logged In</span>
+          <h1>Welcome User</h1>
+        </div>
+      ) : (
+        <div>
+          <span>Not Logged In</span>
+          <h1>Please Log In</h1>
+        </div>
+      )}
     </div>
   );
 };
